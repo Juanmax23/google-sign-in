@@ -21,7 +21,7 @@ export const Article = (props) => {
     const [searchProducts, setSearchProducts] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:3000/product")
+        fetch("http://localhost:4000/products")
             .then(data=>data.json())
             .then((data) => {
                 const newProducts = data.map(value => {

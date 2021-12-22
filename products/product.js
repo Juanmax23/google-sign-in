@@ -7,7 +7,7 @@ router.get('/products',(req,res) => {
 
 
 let products = [
-    {
+      {
         "id": 1,
         "name": "Chaleco",
         "description": "para verano o invierno",
