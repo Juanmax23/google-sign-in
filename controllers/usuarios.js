@@ -47,6 +47,7 @@ const usuariosPut = async(req, res = response) => {
     });
 }
 
+
 const usuariosPatch = (req, res = response) => {
     res.json({
         msg: 'Esto es un Patch'
@@ -54,13 +55,14 @@ const usuariosPatch = (req, res = response) => {
     });
 }
 
+
 const usuariosPost = async(req, res = response) => {
 
     const { nombre, correo, password, rol } = req.body;
     const usuario = new Usuario( { nombre, correo, password, rol} );
 
-   
-    // encriptar la contraseña
+
+    // encriptar la contra
     const salt = bcryptjs.genSaltSync();
     usuario.password = bcryptjs.hashSync( password, salt );
 
@@ -69,27 +71,25 @@ const usuariosPost = async(req, res = response) => {
     await usuario.save();
 
     res.json({
-        msg: 'Esto es un Post',
+        msg: 'se agrego el usario correctamente',
         usuario 
     });
 }
 
 
+
 const usuariosDelete = async(req, res = response) => {
 
     const { id } = req.params;
-
-    // barrarlo fisicamente
-    // const usuario = await Usuario.findByIdAndDelete( id );
-
     const usuario = await Usuario.findByIdAndUpdate( id, {estado: false} );
-
+    
     res.json({
         msg: 'Se ah borrado correctamente',
-        usuario
-
+        usuario,     
     });
+
 }    
+
 
 module.exports = {
     usuariosGet,

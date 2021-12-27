@@ -21,7 +21,7 @@ export const Article = (props) => {
     const [searchProducts, setSearchProducts] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:4000/products")
+        fetch("http://localhost:2023/product")
             .then(data=>data.json())
             .then((data) => {
                 const newProducts = data.map(value => {
@@ -32,11 +32,11 @@ export const Article = (props) => {
                 setSearchProducts(newProducts)
                 })
             .catch((error) => console.log(error))
-      },[])
+    },[])
 
     const addToFav = (product) => {
         setFav(fav.concat(new Fav(product))) 
-      }
+    }
     
     useEffect(()=>{
         let aux = 0
