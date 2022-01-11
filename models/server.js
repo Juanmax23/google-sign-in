@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+
 const { dbConection } = require('../database/config');
 
 require('colors');
@@ -12,25 +13,25 @@ class Server{
 
         this.usuariosPath = '/api/usuarios';
         this.authPath = '/api/auth';
+        this.productPath = '/product'
 
-
-        // Conectar a base de datos
+        // Conectar a base de datos de MongoDB 
         this.conectarDB();
 
         // Middlewares
         this.middlewares();
 
         // Rutas de mi app
-
         this.routes();
     }
 
-     async conectarDB() {
+    async conectarDB() {
         await dbConection();
     }
 
 
     middlewares() {
+
         // CORS
         this.app.use( cors () );
 
@@ -39,6 +40,8 @@ class Server{
 
         // raiz de mi app 
         this.app.use( express.static('public') );
+        
+        
     }
 
     routes() {
@@ -47,16 +50,19 @@ class Server{
 
        this.app.use(this.usuariosPath, require('../routes/usuarios'));
 
+       this.app.use(this.productPath, require('../routes/product'));
 
     }
 
     listen() {
         
      this.app.listen(this.port, () => {
-       console.log(`Api-USER with mongoose is running in this link: http://localhost: ${this.port}`.blue)
+       console.log(`App running in this port: ${this.port}`.blue)
      });
+
     }
+    
 }
 
 
-module.exports= Server;
+module.exports = Server;

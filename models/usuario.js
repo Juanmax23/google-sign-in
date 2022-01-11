@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 
 
 const usuarioShema = Schema({
+    
     nombre: {
         type: String,
         required: [true, 'El nombre es obligatorio']
@@ -18,15 +19,11 @@ const usuarioShema = Schema({
     img: {
         type: String,
     },
-    rol: {
-        type: String,
-        required: true,
-        emun: ['ADMIN_ROLE', 'USER_ROLE']
-    },
-    estado: {
-        type: Boolean,
-        default: true
-    },
+  
+    // estado: {
+    //     type: Boolean,
+    //     default: true
+    // },
     google: {
         type: Boolean,
         default: false

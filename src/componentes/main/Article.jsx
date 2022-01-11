@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Product } from "../domain/product";
 import {ProductRenderer} from "./Main-componentes/ProductRenderer";
-import {Offer, toOffer } from "../domain/offer";
+import { toOffer } from "../domain/offer";
 import Cart from "../domain/cart";
 import Fav from "../domain/Fav";
 import { Category } from "../global/Header/Category";
@@ -14,14 +14,14 @@ export const Article = (props) => {
 
     const [total, setTotal] = useState (0)
 
-    const [sequencer, setSequencer] = useState(1)
+    
 
     const [fav, setFav] = useState([])
 
     const [searchProducts, setSearchProducts] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:2023/product")
+        fetch("http://localhost:4500/product")
             .then(data=>data.json())
             .then((data) => {
                 const newProducts = data.map(value => {
@@ -47,24 +47,26 @@ export const Article = (props) => {
     },[fav])
     
     const removeFav = (id) =>{
-        setFav(fav.filter(it => it.id != id))
+        setFav(fav.filter(it => it.id !== id))
     }
     
     const removeElement = (id) => {
-        setCart(cart.filter(it => it.id !=id))
+        setCart(cart.filter(it => it.id !==id))
     }
     
-    useEffect(()=>{
+
+
+
+
+
     
-    },[sequencer])
-    
-    
-    
+
+
     const addToCart = (product) => {
         setTotal(0)
         let index = cart.indexOf(product)
-        if(index != -1){
-            Cart[index] =1;
+        if(index !== -1){
+            Cart[index]=1;
             setCart(new Cart) 
         }else{
             setCart(cart.concat(new Cart(product)));
@@ -85,7 +87,7 @@ export const Article = (props) => {
         let searchProducts = products.filter(product =>
             product.name.toLowerCase().includes(value.toLowerCase()) ||
             product.description.toLowerCase().includes(value.toLowerCase()) ||
-            product.id == value
+            product.id === value
         )
         setSearchProducts(searchProducts)
     }
@@ -93,7 +95,7 @@ export const Article = (props) => {
     function filterBy(category){
        
         let searchProducts = products.filter(product =>
-            product.category == category
+            product.category === category
         )
         setSearchProducts(searchProducts)
     

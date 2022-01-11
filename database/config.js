@@ -16,7 +16,7 @@ const dbConection = async() => {
 
     } catch (error) {
         console.log(error);
-        throw new Error('Error a la hora de iniciar la base de datos,  Conectalo a mongoose');
+        throw new Error(`Error a la hora de iniciar la base de datos,  Conectalo a mongoose`.red);
     }
 
 
