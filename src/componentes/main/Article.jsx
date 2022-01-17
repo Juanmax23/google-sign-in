@@ -14,8 +14,6 @@ export const Article = (props) => {
 
     const [total, setTotal] = useState (0)
 
-    
-
     const [fav, setFav] = useState([])
 
     const [searchProducts, setSearchProducts] = useState([])
@@ -25,11 +23,12 @@ export const Article = (props) => {
             .then(data=>data.json())
             .then((data) => {
                 const newProducts = data.map(value => {
-                    return new Product(value.id, value.name, value.description, value.price, value.stock, value.offer ?
-                        value.offer.map(it => toOffer(it)) : null, value.category, value.img )
+                    return new Product( value.id, value.name, value.description, value.price, value.stock, value.offer, 
+                       value.category, value.img )
                 })
                 SetProducts(newProducts)
                 setSearchProducts(newProducts)
+               
                 })
             .catch((error) => console.log(error))
     },[])
@@ -54,13 +53,6 @@ export const Article = (props) => {
         setCart(cart.filter(it => it.id !==id))
     }
     
-
-
-
-
-
-    
-
 
     const addToCart = (product) => {
         setTotal(0)
@@ -92,14 +84,7 @@ export const Article = (props) => {
         setSearchProducts(searchProducts)
     }
     
-    function filterBy(category){
-       
-        let searchProducts = products.filter(product =>
-            product.category === category
-        )
-        setSearchProducts(searchProducts)
-    
-    }
+  
 
     // function editQuantity(event, productId) {
     //     let quantity = event.target.value;
@@ -116,6 +101,15 @@ export const Article = (props) => {
     //     totalHolder.innerHTML = total
     // }
 
+
+    function filterBy(category){
+       
+        let searchProducts = products.filter(product =>
+            product.category === category
+        )
+        setSearchProducts(searchProducts)
+    
+    }
 
     return(
 

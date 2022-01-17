@@ -30,5 +30,5 @@ app.use(bodyParser.json());
 //cors, configurar cabeceras http
 app.use(cors);
 
-
+// app
 server.listen()

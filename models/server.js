@@ -3,6 +3,13 @@ const cors = require('cors');
 
 const { dbConection } = require('../database/config');
 
+const execute = require('../infrastructure/initialize');
+
+
+const {  sequelize } = require('./product');
+
+const Product = require('./product');
+
 require('colors');
 
 class Server{
@@ -14,10 +21,13 @@ class Server{
         this.usuariosPath = '/api/usuarios';
         this.authPath = '/api/auth';
         this.productPath = '/product'
+        this.sequelizePath = '/sequelize'
+        
 
         // Conectar a base de datos de MongoDB 
         this.conectarDB();
 
+   
         // Middlewares
         this.middlewares();
 
@@ -28,6 +38,7 @@ class Server{
     async conectarDB() {
         await dbConection();
     }
+
 
 
     middlewares() {
@@ -52,11 +63,17 @@ class Server{
 
        this.app.use(this.productPath, require('../routes/product'));
 
+       this.app.use(this.sequelizePath, require('../routes/sequelize'))
+
+
+
     }
 
     listen() {
         
-     this.app.listen(this.port, () => {
+     this.app.listen(this.port, async() => {
+        // await sequelize.sync({force:true})
+        // execute();
        console.log(`App running in this port: ${this.port}`.blue)
      });
 

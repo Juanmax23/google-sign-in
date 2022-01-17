@@ -8,8 +8,8 @@ const Usuario = require('../models/usuario');
 const usuariosGet = async(req = request, res = response) => {
 
     
-    const {limite = 23, desde = 0 } =  req.query;
-    const query = {estado:true};
+    const {limite = 100, desde = 0 } =  req.query;
+    const query = {  };
 
     const [ total, usuarios ] = await Promise.all([
         Usuario.countDocuments(query),
@@ -67,7 +67,7 @@ const usuariosPost = async(req, res = response) => {
     usuario.password = bcryptjs.hashSync( password, salt );
 
     // guardar en base de datos
-
+    
     await usuario.save();
 
     res.json({

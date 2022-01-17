@@ -1,38 +1,16 @@
-const pool = require('../database/pool');
-
 const Product = require('../models/product')
 
 
-async function  getProduct (req, res){
-   
-  res.send(await Product.findAll());
-  
+function execute(current) {
+    
+  products.forEach(element => {
+    Product.create(element)
+  });
 }
-
-
-
-
-module.exports = {
-   getProduct
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 let products = [
     {
-      
       "name": "Chaleco",
       "description": "para verano o invierno",
       "price": 1000,
@@ -42,7 +20,6 @@ let products = [
       "img": "images/chaelco-blanco-3.jpg"
     },
     {
-      
       "name": "Cintos",
       "description": "lo nuevo para el verano",
       "price": 750,
@@ -52,7 +29,6 @@ let products = [
       "img": "images/cintos-3.jpg"
     },
     {
-      
       "name": "Chaleco",
       "description": "ponete facha",
       "price": 500,
@@ -62,7 +38,6 @@ let products = [
       "img": "images/chaleco-blanco-1.jpg"
     },
     {
-      
       "name": "Chaleco vernao",
       "description": "..",
       "price": 650,
@@ -72,7 +47,6 @@ let products = [
       "img": "../images/chaleco-verano.jpg"
     },
     {
-      
       "name": "Mochila",
       "description": "pocos en stock",
       "price": 750,
@@ -82,7 +56,6 @@ let products = [
       "img": "images/mochila-cuero-blanco.jpg"
     },
     {
-      
       "name": "Chaleco Negro",
       "description": "juega con una camisa",
       "price": 600,
@@ -92,7 +65,6 @@ let products = [
       "img": "images/chaleco-fiesta-negro.jpg"
     },
     {
-     
       "name": "Mochila",
       "description": "fachera y con Accesorios ",
       "price": 750,
@@ -102,7 +74,6 @@ let products = [
       "img": "images/mochila-cuero-rojo.jpg"
     },
     {
-      
       "name": "Cintos",
       "description": "aprovechalos",
       "price": 500,
@@ -112,7 +83,6 @@ let products = [
       "img": "images/cintos-1.jpg"
     },
     {
-      
       "name": "Cintos",
       "description": "lo nuevo para el verano",
       "price": 550,
@@ -122,7 +92,6 @@ let products = [
       "img": "images/cintos-2.jpg"
     },
     {
-      
       "name": "Chaleco",
       "description": "lo nuevo para el verano",
       "price": 750,
@@ -132,7 +101,6 @@ let products = [
       "img": "images/chaleco-fiesta-2.jpg"
     },
     {
-      
       "name": "Mochila",
       "description": "lo nuevo para el verano",
       "price": 900,
@@ -142,7 +110,6 @@ let products = [
       "img": "images/mochila-cuero-negro.jpg"
     },
     {
-     
       "name": "Chaleco",
       "description": "lo nuevo para el verano",
       "price": 750,
@@ -152,7 +119,6 @@ let products = [
       "img": "images/chaleco-blanco-2.jpg"
     },
     {
-      
       "name": "Chalecos fiesta",
       "description": "lo nuevo para el verano",
       "price": 750,
@@ -162,7 +128,6 @@ let products = [
       "img": "images/chaleco-fiesta-1.jpg"
     },
     {
-      
       "name": "Lentes",
       "description": "lo nuevo para el verano",
       "price": 500,
@@ -172,7 +137,6 @@ let products = [
       "img": "images/lentes de sol-1.jpg"
     },
     {
-      
       "name": "Matera de cuero",
       "description": "lo nuevo para el verano",
       "price": 800,
@@ -182,7 +146,6 @@ let products = [
       "img": "images/matera-cuero-1.jpg"
     },
     {
-      
       "name": "Mochilas",
       "description": "de cuero",
       "price": 750,
@@ -192,7 +155,6 @@ let products = [
       "img": "images/mochila-cuero-negro-2.jpg"
     },
     {
-     
       "name": "Accesorios",
       "description": "si se te caen los lentes",
       "price": 350,
@@ -202,7 +164,6 @@ let products = [
       "img": "images/porta-lentes.jpg"
     },
     {
-     
       "name": "Accesorios",
       "description": "collares",
       "price": 350,
@@ -212,7 +173,6 @@ let products = [
       "img": "images/acsesorios.jpg"
     },
     {
-      
       "name": "Polera",
       "description": "fiesta",
       "price": 750,
@@ -222,7 +182,6 @@ let products = [
       "img": "images/polera-fiesta-2.jpg"
     },
     {
-      
       "name": "Conjunto_varsovia",
       "description": "deportivo",
       "price": 1980,
@@ -232,7 +191,6 @@ let products = [
       "img": "images/conjunto-varsovia21.jpg"
     },
     {
-     
       "name": "Polera",
       "description": "bien calentita",
       "price": 750,
@@ -242,7 +200,6 @@ let products = [
       "img": "images/polera-blanca.jpg"
     },
     {
-      
       "name": "Polera",
       "description": "ideal para fiesta",
       "price": 750,
@@ -252,7 +209,6 @@ let products = [
       "img": "images/polera-fiesta.jpg"
     },
     {
-      
       "name": "Chaleco",
       "description": "..",
       "price": 750,
@@ -264,4 +220,4 @@ let products = [
   ];
   
 
- 
+module.exports = execute;

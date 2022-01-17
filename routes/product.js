@@ -5,7 +5,7 @@ const ProductController = require('../controllers/product')
 
 
 
-router.get('/',ProductController.getProduct())
+router.get('/',ProductController.getProduct)
 
 
 router.post('/',)

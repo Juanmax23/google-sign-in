@@ -607,6 +607,12 @@ footer{
 #google_singout{
   width: 100%;
 }
+#enviar{
+  height: 50px;
+}
+#usuario-message{
+  margin-top: 15px;
+}
 
 
  
