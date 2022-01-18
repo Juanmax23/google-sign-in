@@ -9,7 +9,7 @@ const userIsRegistered = false;
 export const Cuenta = () => {
     return (
         <div id="container">
-               <Login isRegistered={userIsRegistered}/>
+            <Login isRegistered={userIsRegistered}/>
         </div>
     );
 }

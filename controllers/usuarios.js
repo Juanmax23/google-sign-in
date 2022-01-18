@@ -58,8 +58,8 @@ const usuariosPatch = (req, res = response) => {
 
 const usuariosPost = async(req, res = response) => {
 
-    const { nombre, correo, password, rol } = req.body;
-    const usuario = new Usuario( { nombre, correo, password, rol} );
+    const { nombre, correo, password } = req.body;
+    const usuario = new Usuario( { nombre, correo, password} );
 
 
     // encriptar la contra

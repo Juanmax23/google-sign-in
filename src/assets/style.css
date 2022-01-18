@@ -367,6 +367,16 @@ article{
   margin-left: 23px;
   margin-bottom: 7px;
 }
+#crear-form{
+  width: 100%;
+  margin-top: 64px;
+  background: #50a3a2;
+  font-family: "Source Sans Pro", sans-serif;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+}
+
 
 #container-form{
   width: 100%;
@@ -379,6 +389,13 @@ article{
 }
 #container-form div{
   margin-bottom: 55px;
+  display: grid;
+  justify-content: center;
+}
+#crear-form form{
+  margin-bottom: 55px;
+  display: grid;
+  justify-content: center;
 }
 #container{
   text-align: center;
@@ -389,6 +406,35 @@ article{
   font-size: 40px;
   font-weight: 200;
 }
+#crear-form h1{
+  font-size: 40px;
+  font-weight: 200;
+  text-align: center;
+}
+
+#container link{
+  font-size: 40px;
+  font-weight: 200;
+ 
+}
+
+#registrarte{
+  margin-right: 139px;
+  width: 250px;
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: rgb(11, 12, 31);
+  font-weight: 300;
+  text-decoration: none;
+}
+#volvera-sesion{
+  text-decoration: none;
+  color: rgb(11, 12, 31);
+  margin-top: 10px;
+}
+
 #form-login input {
   border: 1px solid rgba(252, 252, 252, 0.4);
   background-color: rgba(252, 252, 252, 0.2);
@@ -403,6 +449,12 @@ article{
   color: white;
   font-weight: 300;
 }
+#g_id_onload{
+  margin-left: 50px;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+}
 
  #form-login {
   padding-top: 15px;
@@ -411,7 +463,41 @@ article{
   width: 100%;
 
 }
+#iniciar-sesion{
+  padding-top: 15px;
+  padding-top: 50px;
+  position: relative;
+  width: 100%;
+}
+
+#iniciar-sesion input{
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  background-color: rgba(252, 252, 252, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+}
 #enviar{
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #50a3a2;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 18px;
+  
+  
+}
+#iniciar-cuenta{
   appearance: none;
   outline: 0;
   background-color: white;
@@ -607,12 +693,12 @@ footer{
 #google_singout{
   width: 100%;
 }
-#enviar{
-  height: 50px;
-}
+
 #usuario-message{
   margin-top: 15px;
 }
+
+
 
 
  

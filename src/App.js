@@ -14,7 +14,7 @@ import { Contacto } from './componentes/main/Contacto'
 import { Man } from './componentes/main/Main-componentes/Man'
 import { Boy } from './componentes/main/Main-componentes/boy'
 import { Favoritos } from './componentes/main/Favoritos'
-
+import { AddUser } from './componentes/main/Main-componentes/AddUser'
 
 function App(props) {
   
@@ -40,28 +40,32 @@ function App(props) {
           />
         </Route>
 
-        <Route  path="/Cuenta">
+        <Route exact  path="/Cuenta">
           <Cuenta />
         </Route>
 
-        <Route  path="/Contacto">
+        <Route exact  path="/Contacto">
           <Contacto />
         </Route>
 
-        <Route  path="/Favoritos">
+        <Route exact path="/Favoritos">
           <Favoritos />
         </Route>
 
-        <Route  path="/Woman">
+        <Route exact path="/Woman">
           <Woman />
         </Route>
 
-        <Route  path="/Man">
+        <Route exact path="/Man">
           <Man />
         </Route>
 
-        <Route  path="/Boy">
+        <Route exact path="/Boy">
           <Boy />
+        </Route>
+
+        <Route exact path="/AddUser">
+          < AddUser/>
         </Route>
         
       </Switch>

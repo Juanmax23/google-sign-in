@@ -1,10 +1,10 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
-
+import { Category } from "./Category";
 
 export const Navbar = (props) => {
 
+   
  
 
     return(
@@ -45,6 +45,9 @@ export const Navbar = (props) => {
                         
 
                         <span id="categorias_compu_2_para_cel">
+
+
+                         {/* <Category filterBy={props.filterBy}/> */}
 
                           <Link to="/"><li>Nuevo</li></Link>
                           <Link to="/"><li>Ropa</li></Link>

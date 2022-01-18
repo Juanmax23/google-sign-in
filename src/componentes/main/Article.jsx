@@ -50,7 +50,7 @@ export const Article = (props) => {
     }
     
     const removeElement = (id) => {
-        setCart(cart.filter(it => it.id !==id))
+        setCart(cart.filter(it => it.id !== id))
     }
     
 
@@ -137,6 +137,7 @@ export const Article = (props) => {
                                 <ProductRenderer 
 
                                   
+                                    filterBy={filterBy}
                                     
                                     incrementCounter={props.incrementCounter}
 

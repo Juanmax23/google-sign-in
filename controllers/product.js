@@ -9,12 +9,21 @@ async function  getProduct (req, res){
   
 }
 
+async function addProduct (req, res) {
+  let product = await Product.create(req.body)
+  res.send({message: 'Producto agregado ',product: product })
+  console.log(req.body)
+}
+
+
+
+
 
 
 
 module.exports = {
-   getProduct
-
+   getProduct,
+   addProduct
 }
 
 
@@ -32,7 +41,6 @@ module.exports = {
 
 let products = [
     {
-      
       "name": "Chaleco",
       "description": "para verano o invierno",
       "price": 1000,

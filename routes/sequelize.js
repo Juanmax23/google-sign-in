@@ -14,7 +14,7 @@ router.get('/', async(req, res) => {
         
         
     } catch (error) {
-        console.error(`Unable to connect to the database:`.red, error);
+        console.error(`Error de conexión sequelize `.red, error);
         res.sendStatus(510)
         
     }

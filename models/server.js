@@ -50,7 +50,7 @@ class Server{
         this.app.use( express.json() );
 
         // raiz de mi app 
-        this.app.use( express.static('public') );
+       
         
         
     }

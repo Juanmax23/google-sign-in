@@ -1,51 +1,70 @@
-import React,  { useState} from "react";
 
-import AddUser from "./AddUser";
+import React,  { useState} from "react";
+import { Link } from 'react-router-dom';
+
+
 
 function Login(props) {
-    
-
-    
-
-    const[ usuario, setUsuario ] = useState([])  
-
-    const [ message, confirmarMessage] = useState([])
 
 
-    // const addUser = (usuario) =>{ // {task:'description', priority: 'priority' }
-        
-    //     fetch('http://localhost:4500/api/usuarios',
-    //     {
-    //       method:'POST',
-    //       headers:{ 
-    //         'Accept': 'application/json',
-    //         'Content-Type':'application/json'
-    //       },
-    //       body: JSON.stringify({...usuario})
-    //     })
-    //       .then((data) => data.json())
-    //       .then((data) => {
-    //         setUsuario(usuario.concat(data.usuario));
-              
-    //           console.log(data)
-    //       }).catch(e=> console.log(e))
-    //   }
+    const [usuario, guardarUsuario] = useState({
+        correo: '',
+        password:'',
+    });
 
+    const { correo, password } = usuario;
+   
+    const onChange = (e) => {
+        guardarUsuario({
+            ...usuario,
+            [e.target.name] : e.target.value
+        })
 
- 
+    }
+    const onSubmit = (e) => {
+        e.preventDefault();
+    }
+
 
     return (
 
         
         
         <div id="container-form">
+
+            
+            <form id="iniciar-sesion" onSubmit={onSubmit} > 
+
+                <h1>Iniciar Sesión</h1>
+
+                <input
+                    name="correo" 
+                    type="correo"
+                    placeholder="Email:"
+                    onChange={onChange}
+                    value={correo}
+                />
+
+
+                <input 
+                   name="password"
+                   type="password"
+                   placeholder="Contraseña:"
+                   onChange={onChange} 
+                   value={password}
+                />
+
+
+                <button id="iniciar-cuenta" type="submit" value="Iniciar Sesión">
+                    Iniciar Sesión
+                </button>
+
+
+                <Link to={'/AddUser'} id="registrarte"> Crear Cuenta </Link>
                 
-                           
-            <AddUser>
-           
 
-            </AddUser>
-
+            </form>
+            
 
 
             <div id="g_id_onload"
@@ -76,3 +95,25 @@ function Login(props) {
 }
 
 export default Login;
+
+
+
+
+ // const addUser = (usuario) =>{ // {task:'description', priority: 'priority' }
+        
+    //     fetch('http://localhost:4500/api/usuarios',
+    //     {
+    //       method:'POST',
+    //       headers:{ 
+    //         'Accept': 'application/json',
+    //         'Content-Type':'application/json'
+    //       },
+    //       body: JSON.stringify({...usuario})
+    //     })
+    //       .then((data) => data.json())
+    //       .then((data) => {
+    //         setUsuario(usuario.concat(data.usuario));
+              
+    //           console.log(data)
+    //       }).catch(e=> console.log(e))
+    //   }

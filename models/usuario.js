@@ -18,6 +18,7 @@ const usuarioShema = Schema({
     },
     img: {
         type: String,
+        require: false
     },
   
     // estado: {
