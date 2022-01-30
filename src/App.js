@@ -40,7 +40,7 @@ function App(props) {
           />
         </Route>
 
-        <Route exact  path="/Cuenta">
+        <Route exact path="/Cuenta">
           <Cuenta />
         </Route>
 
