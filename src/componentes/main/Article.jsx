@@ -18,7 +18,29 @@ export const Article = (props) => {
 
     const [searchProducts, setSearchProducts] = useState([])
 
-    useEffect(()=>{
+    const addProduct = () =>{ 
+        
+        fetch('http://localhost:4500/product',
+        {
+          method:'POST',
+          headers:{ 
+            'Accept': 'application/json',
+            'Content-Type':'application/json'
+          },
+          body: JSON.stringify({})
+        })
+          .then((data) => data.json())
+          .then((data) => {
+              const newProducts = data.map(value => {
+               return new Product( value.id, value.name, value.description, value.price, value.stock, value.offer, 
+               value.category, value.img )
+        })
+              SetProducts(newProducts)
+              console.log(data)
+          }).catch(e=> console.log(e))
+    }
+
+    useEffect(()=> {
         fetch("http://localhost:4500/product")
             .then(data=>data.json())
             .then((data) => {

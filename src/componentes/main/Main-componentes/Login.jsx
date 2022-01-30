@@ -40,7 +40,7 @@ function Login(props) {
                 <input
                     name="correo" 
                     type="correo"
-                    placeholder="Email:"
+                    placeholder="Email o Nombre:"
                     onChange={onChange}
                     value={correo}
                 />

@@ -15,6 +15,12 @@ async function addProduct (req, res) {
   console.log(req.body)
 }
 
+async function getProductById(req, res) {
+  // res.send(await Product.findByPk(req.params.id))
+  console.log(req.body)
+  console.log('buscando un product')
+
+};
 
 
 
@@ -23,7 +29,8 @@ async function addProduct (req, res) {
 
 module.exports = {
    getProduct,
-   addProduct
+   addProduct,
+   getProductById
 }
 
 
